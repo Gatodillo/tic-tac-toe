@@ -1,3 +1,4 @@
+import random
 from utils import wins, MODE_VS, MODE_AI, MODE_AI_N
 
 COMP = 1
