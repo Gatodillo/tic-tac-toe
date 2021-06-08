@@ -3,10 +3,12 @@ import pygame
 pygame.init()
 
 screenInfo = pygame.display.Info()
-
+breakpoint()
 game_w = min(screenInfo.current_w, screenInfo.current_h)
 game_h = game_w
-screen = pygame.display.set_mode([game_w, game_h])
+game_w = 800
+game_h = 600
+screen = pygame.display.set_mode([game_w, game_h], pygame.RESIZABLE)
 font = pygame.font.SysFont("comicsansms",20)
 
 white = (255, 255, 255)

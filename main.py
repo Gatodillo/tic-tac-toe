@@ -18,6 +18,7 @@ class Board:
         self.font = pygame.font.SysFont("comicsansms",20)
         pygame.display.set_caption("Gato")
 
+
     def reset(self):
         w = .6 * game_w
         h = .6 * game_h
@@ -84,8 +85,8 @@ game_board = Board()
 
 buttons = []
 buttons.append(Button("vs humano", .175 * game_w, .8 * game_h, .175 * game_w, .2 * game_h, green_active, green_inactive, lambda: start_game(MODE_VS)))
-buttons.append(Button("vs computadora (díficil)", .4 * game_w, .8 * game_h, .175 * game_w, .2 * game_h, red_active, red_inactive, lambda: start_game(MODE_AI)))
-buttons.append(Button("vs computadora (normal)", .625 * game_w, .8 * game_h, .175 * game_w, .2 * game_h, orange_active, orange_inactive, lambda: start_game(MODE_AI_N)))
+buttons.append(Button("vs IA (díficil)", .4 * game_w, .8 * game_h, .175 * game_w, .2 * game_h, red_active, red_inactive, lambda: start_game(MODE_AI)))
+buttons.append(Button("vs IA (normal)", .625 * game_w, .8 * game_h, .175 * game_w, .2 * game_h, orange_active, orange_inactive, lambda: start_game(MODE_AI_N)))
 
 def start_game(mode):
     global intro, game_mode
@@ -95,7 +96,7 @@ def start_game(mode):
     game_board.show()
 
 def draw_intro():
-    text = font.render("Select game mode", True, white)
+    text = font.render("Selecciona un modo de juego", True, white)
     screen.blit(text, (.35 * game_w, .4 * game_h))
 
     for button in buttons:
