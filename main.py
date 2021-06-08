@@ -16,7 +16,7 @@ class Board:
 
     def __init__(self):
         self.font = pygame.font.SysFont("comicsansms",20)
-        pygame.display.set_caption("Tic Tac Toe")
+        pygame.display.set_caption("Gato")
 
     def reset(self):
         w = .6 * game_w
@@ -29,7 +29,7 @@ class Board:
         pygame.draw.line(self.board, white, [0, h/3], [w, h/3], 5)
         pygame.draw.line(self.board, white, [0, 2*h/3], [w, 2*h/3], 5)
         self.grid = [[None, None, None], [None, None, None], [None, None, None]]
-        self.text = self.font.render("Player X: %d    Player O: %d    Ties: %d" % (self.scores['X'], self.scores['0'], self.scores['tie']), True, white)
+        self.text = self.font.render("Jugador X: %d    Jugador O: %d    Empate: %d" % (self.scores['X'], self.scores['0'], self.scores['tie']), True, white)
         self.player = 'X'
         self.remaining = 9
 
@@ -83,9 +83,9 @@ intro = True
 game_board = Board()
 
 buttons = []
-buttons.append(Button("vs player", .175 * game_w, .8 * game_h, .175 * game_w, .2 * game_h, green_active, green_inactive, lambda: start_game(MODE_VS)))
-buttons.append(Button("vs computer (hard)", .4 * game_w, .8 * game_h, .175 * game_w, .2 * game_h, red_active, red_inactive, lambda: start_game(MODE_AI)))
-buttons.append(Button("vs computer (normal)", .625 * game_w, .8 * game_h, .175 * game_w, .2 * game_h, orange_active, orange_inactive, lambda: start_game(MODE_AI_N)))
+buttons.append(Button("vs humano", .175 * game_w, .8 * game_h, .175 * game_w, .2 * game_h, green_active, green_inactive, lambda: start_game(MODE_VS)))
+buttons.append(Button("vs computadora (díficil)", .4 * game_w, .8 * game_h, .175 * game_w, .2 * game_h, red_active, red_inactive, lambda: start_game(MODE_AI)))
+buttons.append(Button("vs computadora (normal)", .625 * game_w, .8 * game_h, .175 * game_w, .2 * game_h, orange_active, orange_inactive, lambda: start_game(MODE_AI_N)))
 
 def start_game(mode):
     global intro, game_mode
